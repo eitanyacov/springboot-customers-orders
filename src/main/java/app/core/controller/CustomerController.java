@@ -7,6 +7,7 @@ import app.core.model.Order;
 import app.core.repositoty.CustomerRepo;
 import app.core.repositoty.OrderRepo;
 import app.core.service.CustomerService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,16 +19,14 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/api")
 public class CustomerController {
 
-    @Autowired
     private CustomerRepo customerRepo;
 
-    @Autowired
     private OrderRepo orderRepo;
 
-    @Autowired
     private CustomerService customerService;
 
     @GetMapping("/all")
